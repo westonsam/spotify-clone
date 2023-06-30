@@ -130,13 +130,13 @@ const Header: React.FC<HeaderProps> = ({
                 ">
                     {user ? (
                         <div className="flex gap-x-4 items-center">
-                            <Button 
-                            onClick={handleLogout}
-                            className="bg-white px-6 py-2"
+                            <Button
+                                onClick={handleLogout}
+                                className="bg-white px-6 py-2"
                             >
                                 Logout
                             </Button>
-                            <Button 
+                            <Button
                                 onClick={() => router.push('/account')}
                                 className="bg-white"
                             >
@@ -144,32 +144,32 @@ const Header: React.FC<HeaderProps> = ({
                             </Button>
                         </div>
                     ) : (
-                    <>
-                        <div>
-                            <Button
-                                onClick={authModal.onOpen}
-                                className="
+                        <>
+                            <div>
+                                <Button
+                                    onClick={authModal.onOpen}
+                                    className="
                                 bg-transparet
                                 text-neutral-300
                                 font-medium
                                 "
-                            >
-                                Sign Up
-                            </Button>
-                        </div>
-                        <div>
-                            <Button
-                                onClick={authModal.onOpen}
-                                className="
+                                >
+                                    Sign Up
+                                </Button>
+                            </div>
+                            <div>
+                                <Button
+                                    onClick={authModal.onOpen}
+                                    className="
                                 bg-white
                                 px-6
                                 py-2
                                 "
-                            >
-                                Log In
-                            </Button>
-                        </div>
-                    </>
+                                >
+                                    Log In
+                                </Button>
+                            </div>
+                        </>
                     )}
                 </div>
             </div>
