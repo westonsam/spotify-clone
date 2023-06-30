@@ -32,7 +32,8 @@ const MediaItem: React.FC<MediaItemProps> = ({
         w-full
         p-2
         rounded-md
-        gap-x-3"
+        gap-x-3
+        cursor-pointer"
         >
             <div
                 className="
