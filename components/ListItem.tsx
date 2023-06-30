@@ -32,7 +32,7 @@ const ListItem: React.FC<ListItemProps> = ({
         overflow-hidden
         gap-x-4
         bg-neutral-100/10
-        hover: bg-neutral-100/20
+        hover:bg-neutral-100/20
         transition
         pr-4
         ">
