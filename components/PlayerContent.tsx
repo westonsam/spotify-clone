@@ -112,8 +112,13 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
                     className="
                 flex
                 items-center
-                gap-x-4">
-                    <MediaItem data={song} />
+                gap-x-4
+                h-full
+                overflow-hidden
+                ">
+                    <div className="w-[calc(100%-25px)] truncate">
+                        <MediaItem data={song} />
+                    </div>
                     <LikeButton songId={song.id} />
                 </div>
             </div>
@@ -210,9 +215,9 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
                         className="cursor-pointer"
                         size={34}
                     />
-                    <Slider 
-                    value={volume}
-                    onChange={(value) => setVolume(value)}/>
+                    <Slider
+                        value={volume}
+                        onChange={(value) => setVolume(value)} />
                 </div>
             </div>
         </div>
