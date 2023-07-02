@@ -1,8 +1,8 @@
 import { Price } from "@/types";
 
-export const getURl = () => {
+export const getURL = () => {
     let url =
-        process.env.NEXT_PUBLIC_SITE_URL ??
+        process.env.NEXT_PUBLIC_SITE_URL ?? 
         process.env.NEXT_PUBLIC_VERCEL_URL ??
         'http://localhost:3000';
 
@@ -30,7 +30,7 @@ export const postData = async ({
             body: JSON.stringify(data)
         });
 
-        if (!resizeBy.ok) {
+        if (!res.ok) {
             console.log('Error in postData', { url, data, res });
 
             throw Error(res.statusText);
@@ -40,8 +40,8 @@ export const postData = async ({
 };
 
 export const toDateTime = (secs: number) => {
-    var time = new Date('1970-01-01T00:30:00Z');
-    time.setSeconds(secs);
-    return time;
+    var t = new Date('1970-01-01T00:30:00Z');
+    t.setSeconds(secs);
+    return t;
 };
 

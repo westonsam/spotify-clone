@@ -3,11 +3,12 @@
 import { TbPlaylist } from "react-icons/tb";
 import { AiOutlinePlus } from "react-icons/ai";
 
+import { Song } from "@/types";
+import { useUser } from "@/hooks/useUser";
 import useAuthModal from "@/hooks/useAuthModal";
 import useUploadModal from "@/hooks/useUploadModal";
-import { useUser } from "@/hooks/useUser";
 import useOnPlay from "@/hooks/useOnPlay";
-import { Song } from "@/types";
+import useSubscriptionModal from "@/hooks/useSubscriptionModal";
 
 import MediaItem from "./MediaItem";
 
@@ -20,14 +21,19 @@ const Library: React.FC<LibraryProps> = ({
 }) => {
     const authModal = useAuthModal();
     const uploadModal = useUploadModal();
-    const { user } = useUser();
+    const subscriptionModal = useSubscriptionModal();
+    const { user, subscription } = useUser();
     const onPlay = useOnPlay(songs);
 
     const onClick = () => {
         if (!user) {
             return authModal.onOpen();
         }
-        //TODO: Check for stripe subscriptions
+        
+        if (!subscription){
+            return subscriptionModal.onOpen();
+        }
+
         return uploadModal.onOpen();
     };
     return (

@@ -9,11 +9,11 @@ import { FaUserAlt } from "react-icons/fa";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { toast } from "react-hot-toast";
 
-import useAuthModal from "@/hooks/useAuthModal";
 import { useUser } from "@/hooks/useUser";
+import useAuthModal from "@/hooks/useAuthModal";
+import usePlayer from "@/hooks/usePlayer";
 
 import Button from "./Button";
-import usePlayer from "@/hooks/usePlayer";
 
 interface HeaderProps {
     children: React.ReactNode;
